@@ -1,14 +1,17 @@
 package com.company.com.m2i.poe.GeneticCode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
- public class SADN {
+public class SADN {
 
     private ArrayList <Base> brin = new ArrayList<>();
 
-     public SADN() {
+    public ArrayList<Base> getBrin() {
+        return brin;
+    }
+
+    public SADN(ArrayList<Base> brin) {
      }
 
      public SADN(String brin) {
@@ -18,25 +21,27 @@ import java.util.Arrays;
          }
      }
 
-     @Override
+
      public String toString() {
          return "SADN{"+ brin +'}';
      }
 
-     public SADN getBrinComplementary(){
-         SADN cADN = new SADN();
+
+     public SADN getComplementary(){
+         SADN cADN = new SADN(brin);
          for (Base b: brin){
              cADN.brin.add(b.getComplementary(true));
          }
          return cADN;
      }
 
+
      public SADN getARN(){
-         SADN cADN = new SADN();
+         SADN cARN = new SADN(brin);
          for (Base b: brin){
-             cADN.brin.add(b.getComplementary(false));
+             cARN.brin.add(b.getComplementary(false));
          }
-         return cADN;
+         return cARN;
      }
 
 
