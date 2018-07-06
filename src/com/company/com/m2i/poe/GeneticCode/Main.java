@@ -2,6 +2,7 @@ package com.company.com.m2i.poe.GeneticCode;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -35,15 +36,28 @@ public class Main {
         ArrayList<String> codons1 = ribosome1.getCodonList(arn1);
         //System.out.println(codons1);
         ArrayList<AminoAcid> peptide1 = ribosome1.translate(codons1);
-        System.out.println(peptide1);
-
+        //System.out.println(peptide1);
 
         //System.out.println(sadn1.getComplementary());
-
         //System.out.println(repo);
 
+        List<ArrayList<AminoAcid>> peptides = new ArrayList();
+        ArrayList<AminoAcid> minipep = new ArrayList<>();
+        for (int i = 0; i < peptide1.size(); i++) {
+            if (!peptide1.get(i).getSymbol().equals(" ")) {
+                minipep.add(peptide1.get(i));
+            } else {
+                peptides.add(minipep);
+                minipep = new ArrayList<AminoAcid>();
+            }
+        }
+
+        for (int i = 0; i<peptides.size(); i++)
+        System.out.println(peptides.get(i));
     }
 }
+
+
 
 
 
