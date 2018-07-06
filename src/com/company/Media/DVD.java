@@ -2,19 +2,24 @@ package com.company.Media;
 
 public class DVD extends Media {
 
-    public DVD(String id, String titre, double price, int zone) {
-        super(id, titre, price);
+    private int zone;
+
+    public int getZone() {
+        return zone;
     }
 
-    @Override
-    public double getNetPrice(){
-        double netPrice = getPrice()*1.2*0.8;
-        System.out.println("netPrice = "+ netPrice);
-        return netPrice;
+    public void setZone(int zone) {
+        this.zone = zone;
     }
 
-    @Override
-    public String toString() {
-        return "DVD{} " + super.toString();
+    public DVD() {}
+
+    public DVD(int id, String title, double price) {
+        super(id,title,price);
+    }
+
+    //@Override
+    public  double getNetPrice() {
+        return getPrice() * 1.2 * 0.8;
     }
 }

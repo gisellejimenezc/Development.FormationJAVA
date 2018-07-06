@@ -1,22 +1,25 @@
 package com.company.Media;
 
-public class Book extends Media{
+public class Book extends Media {
 
-    public Book(String id, String titre, double price, int nbpage) {
-        super(id, titre, price);
+    private int nbPage;
+
+    public int getNbPage() {
+        return nbPage;
     }
 
-    @Override
-    public double getNetPrice(){
-        double netPrice = getPrice()*1.05;
-        System.out.println("netPrice = "+ netPrice);
-        return netPrice;
+    public void setNbPage(int nbPage) {
+        this.nbPage = nbPage;
     }
 
-    @Override
-    public String toString() {
-        return "Book{} " + super.toString();
+    public Book() {}
+
+    public Book(int id, String title, double price) {
+        super(id,title,price);
     }
 
-
+    //@Override
+    public double getNetPrice() {
+        return getPrice() * 1.05 * 0.95 + 0.01;
+    }
 }

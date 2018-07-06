@@ -13,8 +13,8 @@ public class BookRepository implements IBookRepository {
 
     public void load (String uri) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(uri));
-        reader.readLine();
-        String line = reader.readLine();//saute la prémiere ligne
+        reader.readLine(); // Lit la line mais ne la sauvergade pas, il "saute" la prémiere ligne
+        String line = reader.readLine();//Lit et la sauvegarde dorenavant
         while (line != null) {
             StringTokenizer st = new StringTokenizer(line, ";");
             //st.nextToken();

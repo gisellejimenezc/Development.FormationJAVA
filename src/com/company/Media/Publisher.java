@@ -3,25 +3,34 @@ package com.company.Media;
 public class Publisher {
 
     private int id;
-    private String nom;
+    private String name;
 
-    public Publisher(){
+    public Publisher(String name) {
+        //this.id = id;
+        this.name = name;
+    }
+    public Publisher() {}
+
+    public int getId() {
+        return id;
     }
 
-    public Publisher(int id,String nom){
+    public void setId(int id) {
         this.id = id;
-        this.nom = nom;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Publisher{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
+                "name='" + name + '\'' +
                 '}';
     }
 }

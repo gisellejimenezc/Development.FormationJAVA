@@ -1,14 +1,25 @@
 package com.company.Media;
 
-public class CD extends Media{
+public class Cd extends  Media {
 
-    public CD(String id, String titre, double price, int nbtrack) {
-        super(id, titre, price);
+    private int nbPage;
+
+    public int getNbPage() {
+        return nbPage;
     }
 
+    public void setNbPage(int nbPage) {
+        this.nbPage = nbPage;
+    }
 
-    @Override
-    public String toString() {
-        return "CD{} " + super.toString();
+    public Cd() {}
+
+    public Cd(int id, String title, double price) {
+        super(id,title,price);
+    }
+
+    //@Override
+    public double getNetPrice() {
+        return getPrice() * 1.2;
     }
 }

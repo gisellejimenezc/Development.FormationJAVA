@@ -1,0 +1,256 @@
+@startuml
+
+title __MEDIA's Class Diagram__\n
+
+  package com.company {
+    package com.company.Media {
+      class Author {
+          - id : int
+          - firstName : String
+          - lastName : String
+          + Author()
+          + Author()
+          + getId()
+          + setId()
+          + getFirstName()
+          + setFirstName()
+          + getLastName()
+          + setLastName()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      class Book {
+          - nbPage : int
+          + getNbPage()
+          + setNbPage()
+          + Book()
+          + Book()
+          + getNetPrice()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      class BookRepository {
+          ~ bookList : List<Book>
+          + load()
+          + toString()
+          + getAll()
+          + getById()
+          + getByTitle()
+          + getByPrice()
+          + getByPublisher()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      class Cart {
+          - cartRowList : List<CartRow>
+          + getMediaList()
+          + getTotalNetPrice()
+          + add()
+          - isMediaInCart()
+          + remove()
+          + validate()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      class CartRow {
+          - quantity : int
+          + CartRow()
+          + CartRow()
+          + increment()
+          + decrement()
+          + getMedia()
+          + setMedia()
+          + getQuantity()
+          + toString()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      class Cd {
+          - nbPage : int
+          + getNbPage()
+          + setNbPage()
+          + Cd()
+          + Cd()
+          + getNetPrice()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      class Dvd {
+          - zone : int
+          + getZone()
+          + setZone()
+          + Dvd()
+          + Dvd()
+          + getNetPrice()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      interface IBookRepository {
+          {abstract} + getAll()
+          {abstract} + getById()
+          {abstract} + getByTitle()
+          {abstract} + getByPrice()
+          {abstract} + getByPublisher()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      interface IMedia {
+          {abstract} + getPrice()
+          {abstract} + setPrice()
+          {abstract} + getId()
+          {abstract} + setId()
+          {abstract} + getTitle()
+          {abstract} + setTitle()
+          {abstract} + getPublisher()
+          {abstract} + setPublisher()
+          {abstract} + getAuthorList()
+          {abstract} + setAuthorList()
+          {abstract} + getNetPrice()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      abstract class Media {
+          - price : double
+          - id : int
+          - title : String
+          - authorList : List<Author>
+          + Media()
+          + Media()
+          + getPrice()
+          + setPrice()
+          + getId()
+          + setId()
+          + getTitle()
+          + setTitle()
+          + getPublisher()
+          + setPublisher()
+          + getAuthorList()
+          + setAuthorList()
+          + toString()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      class MediaException {
+          + MediaException()
+      }
+    }
+  }
+  
+
+  abstract class PrintStreamOrWriter {
+      - PrintStreamOrWriter()
+      {abstract} ~ lock()
+      {abstract} ~ println()
+  }
+  
+
+  class SentinelHolder {
+      {static} + STACK_TRACE_ELEMENT_SENTINEL : StackTraceElement
+      {static} + STACK_TRACE_SENTINEL : StackTraceElement[]
+      - SentinelHolder()
+  }
+  
+
+  class WrappedPrintStream {
+      - printStream : PrintStream
+      ~ WrappedPrintStream()
+      ~ lock()
+      ~ println()
+  }
+  
+
+  class WrappedPrintWriter {
+      - printWriter : PrintWriter
+      ~ WrappedPrintWriter()
+      ~ lock()
+      ~ println()
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      class MediaMain {
+          {static} + main()
+      }
+    }
+  }
+  
+
+  package com.company {
+    package com.company.Media {
+      class Publisher {
+          - id : int
+          - name : String
+          + Publisher()
+          + Publisher()
+          + getId()
+          + setId()
+          + getName()
+          + setName()
+          + toString()
+      }
+    }
+  }
+  
+
+  Book -up-|> Media
+  BookRepository -up-|> IBookRepository
+  CartRow o-- IMedia : media
+  Cd -up-|> Media
+  Dvd -up-|> Media
+  Media -up-|> IMedia
+  Media o-- Publisher : publisher
+  MediaException +-down- PrintStreamOrWriter
+  MediaException +-down- SentinelHolder
+  MediaException +-down- WrappedPrintStream
+  MediaException +-down- WrappedPrintWriter
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
