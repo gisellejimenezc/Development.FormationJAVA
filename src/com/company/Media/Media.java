@@ -81,12 +81,6 @@ public abstract class Media implements IMedia {
 
     @Override
     public String toString() {
-        return "Media{" +
-                "price=" + price +
-                ", id=" + id +
-                ", title='" + title + '\'' +
-                ", publisher=" + publisher +
-                ", authorList=" + authorList +
-                '}';
+        return  id + " "+ title+ " " + price+ " "+ publisher+ " "+ authorList;
     }
 }

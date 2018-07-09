@@ -3,6 +3,7 @@ package com.company.Media;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -11,7 +12,7 @@ public class BookRepository implements IBookRepository {
 
    List<Book> bookList = new ArrayList<>();
 
-    public void load (String uri) throws IOException {
+    public void load (String uri) throws IOException, ClassNotFoundException, SQLException {
         BufferedReader reader = new BufferedReader(new FileReader(uri));
         reader.readLine(); // Lit la line mais ne la sauvergade pas, il "saute" la prémiere ligne
         String line = reader.readLine();//Lit et la sauvegarde dorenavant
@@ -39,12 +40,14 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public List<Book> getAll() throws IOException {
+    public List<Book> getAll() throws IOException, SQLException {
         return bookList;
     }
 
+
+
     @Override
-    public Book getById(int id) {
+    public Book getById(int id) throws SQLException {
         Book bId = new Book();
         for (Book b : bookList ){
             if (id == b.getId()){
@@ -56,7 +59,7 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public List<Book> getByTitle(String title) {
+    public List<Book> getByTitle(String title) throws SQLException {
         List<Book> bookByTitle = new ArrayList<>();
         for (Book b : bookList) {
             if (b.getTitle().contains(title)) {
@@ -67,7 +70,7 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public List<Book> getByPrice(double price) {
+    public List<Book> getByPrice(double price) throws SQLException {
         List<Book> bookByPrice = new ArrayList<>();
         for (Book b : bookList ) {
             if (price >= b.getPrice()) {

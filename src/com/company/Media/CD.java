@@ -1,6 +1,6 @@
 package com.company.Media;
 
-public class Cd extends  Media {
+public class Cd extends Media {
 
     private int nbPage;
 
@@ -18,7 +18,7 @@ public class Cd extends  Media {
         super(id,title,price);
     }
 
-    //@Override
+    @Override
     public double getNetPrice() {
         return getPrice() * 1.2;
     }

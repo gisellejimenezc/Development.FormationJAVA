@@ -1,10 +1,11 @@
+/*
 package com.company.Media;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Book b1 = new Book("B001","La mort d'Ivan Illich", 5, 80 );
+        com.company.Media.Book b1 = new Book("B001","La mort d'Ivan Illich", 5, 80 );
         CD c1 = new CD("C001","Alberto Plazas", 8, 15 );
         DVD d1 = new DVD("D001","Ethernal Sunshine", 10, 1 );
 
@@ -17,7 +18,9 @@ public class Main {
         Book b3 = new Book("B003", "El olvido que seremos", 15, 250);
         b3.getNetPrice();
         String author1 = "Hector Fancioli";
-        /* b3.setAuthor1()=author1; */
+        */
+/* b3.setAuthor1()=author1; *//*
+
 
 
 
@@ -31,3 +34,4 @@ public class Main {
 
     }
 }
+*/
