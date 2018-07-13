@@ -1,0 +1,29 @@
+
+/*{color:red}*/
+html {
+  font-family: "Gadugi";
+ font-size:100%;
+}
+    body {
+
+    }
+        .corp {column-count: 2;}
+
+        .tete {left: 0px; top: 0px; background-color: lightblue;}
+        .photo { left: 200px; top: 200px; margin: 70px 100px 20px 150px;}
+        .title {float:right;margin: 100px;margin: 70px 100px 20px 100px;}
+        .nom { font-size : 22px; font-weight:bold}
+        .titre{float:right; font-size:18px; font-style: italic;}
+
+        .timexp{font-size:22px; font-weight: bold; margin:30 px; }
+
+        .comp{font-size:14px; font-style: italic; font-weight:bold; float:center; margin:30px; grid-column-start: 1;}
+        .dip{font-style:bold; font-size:16px; margin:30px;grid-column-end: 1}
+
+        .exp{font-size:18px; margin:40px; grid-column-start: 2; }
+            .exp1{font-style:bold; font-size:16px; margin:20px; }
+            .exp2{font-style:bold; font-size:16px; margin:20px; }
+                        .exp3{font-style:bold; font-size:16px; margin:20px; }
+                        .exp4{font-style:bold; font-size:16px; margin:20px; }
+                        .exp5{font-style:bold; font-size:16px; margin:20px; }
+                        .exp6{font-style:bold; font-size:16px; margin:20px; }
