@@ -1,0 +1,16 @@
+   [ {
+        "nom" : "Requenna",
+        "prenom": "Matthieu",
+        "notes": [10, 12, 14, 17, 20]
+    },
+    {
+        "nom" : "Toto",
+        "prenom": "Matt",
+        "notes": [15, 18, 9, 17, 18]
+    },
+    {
+        "nom" : "Reque",
+        "prenom": "Lilu",
+        "notes": [9, 5, 6, 8, 10]
+        }
+]
